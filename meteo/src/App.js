@@ -4,9 +4,9 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import ForecastPage from './pages/ForecastPage';
 import axios from 'axios';
-import 'leaflet/dist/leaflet.css';  // Importa il CSS di Leaflet
+import 'leaflet/dist/leaflet.css';
 
-const cities = ['Rome,IT', 'Tokyo,JP', 'New York,US', 'Paris,FR', 'London,GB', 'Sydney,AU'];
+const cities = ['Rome', 'Tokyo', 'New York', 'Paris', 'London', 'Sydney'];
 
 const App = ({ backgroundImage }) => {
   const [weatherData, setWeatherData] = useState({});
@@ -14,7 +14,6 @@ const App = ({ backgroundImage }) => {
 
   const apiKey = '43c3185f53a1409627d95ab543e3882a';
 
-  // Fetch weather data for all cities
   const fetchWeatherData = async (city) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=it&units=metric`;
 
@@ -27,7 +26,6 @@ const App = ({ backgroundImage }) => {
     }
   };
 
-  // Fetch forecast data for all cities
   const fetchForecastData = async (city) => {
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&appid=${apiKey}&lang=it&units=metric`;
 
@@ -44,7 +42,6 @@ const App = ({ backgroundImage }) => {
     }
   };
 
-  // Fetch data for all cities
   const loadCityData = useCallback(async () => {
     const weatherPromises = cities.map(city => fetchWeatherData(city));
     const forecastPromises = cities.map(city => fetchForecastData(city));

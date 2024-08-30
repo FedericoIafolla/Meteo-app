@@ -6,14 +6,14 @@ import { FaCloud, FaCalendarAlt } from 'react-icons/fa';
 const Header = () => (
     <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand as={Link} to="/">
-            <FaCloud /> Meteo App
+            <FaCloud style={{ marginLeget: '10px' }} /> Meteo App
         </Navbar.Brand>
         <Nav className="mr-auto">
             <Nav.Link as={Link} to="/">
                 Home
             </Nav.Link>
             <Nav.Link href="#" onClick={(e) => e.preventDefault()}>
-                <FaCalendarAlt /> Previsioni
+                <FaCalendarAlt style={{ marginRight: '10px' }} /> Previsioni
             </Nav.Link>
         </Nav>
     </Navbar>

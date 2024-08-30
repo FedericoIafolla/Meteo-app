@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 import Weather from '../components/Weather';
 
+// Mappa dei nomi delle città
 const cityNames = {
     Rome: "Roma",
     Tokyo: "Tokyo",
@@ -96,7 +97,7 @@ const Home = ({ weatherData, onSearch }) => {
                     {selectedCity ? (
                         <Weather weatherData={weatherData[selectedCity]} />
                     ) : (
-                        <p>Seleziona una città per vedere i dettagli.</p>
+                        <p> </p>
                     )}
                 </Col>
             </Row>
