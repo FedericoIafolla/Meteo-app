@@ -103,7 +103,7 @@ const Home = ({ weatherData, onSearch }) => {
             </Row>
             <footer
                 style={{
-                    backgroundColor: '#007bff', // Colore blu scuro per il footer
+                    backgroundColor: '#212529', // Colore dello stesso header
                     color: 'white',
                     textAlign: 'center',
                     padding: '10px',

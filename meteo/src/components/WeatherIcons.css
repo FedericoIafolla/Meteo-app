@@ -11,9 +11,9 @@
   height: 150px; /* Imposta un'altezza fissa per la scheda */
   overflow: hidden; /* Nasconde l'overflow del contenuto se necessario */
   background-color: rgba(
-    223,
-    255,
-    255,
+    209,
+    247,
+    247,
     0.7
   ) !important; /* Colore di sfondo bianco con 70% di opacità */
   backdrop-filter: blur(
@@ -39,10 +39,11 @@
 }
 
 .weather-info .card-title {
-  font-size: 1.5rem; /* Aumenta la dimensione del testo della città */
+  font-size: 2rem; /* Aumenta la dimensione del testo della città */
   margin: 0; /* Riduci lo spazio sopra il titolo */
   margin-bottom: 10px; /* Spazio sotto il titolo */
   margin-top: -5px; /* Sposta il titolo più in alto */
+  font-weight: bold; /* Aggiungi il grassetto per il titolo */
 }
 
 .weather-info .card-subtitle {
