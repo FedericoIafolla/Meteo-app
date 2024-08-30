@@ -21,6 +21,7 @@ const Home = ({ weatherData, onSearch }) => {
         if (searchCity) {
             onSearch(searchCity);
             setSelectedCity(searchCity);
+            setSearchCity(''); // Resetta la barra di ricerca
         }
     };
 
