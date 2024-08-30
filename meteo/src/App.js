@@ -1,25 +1,106 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useCallback } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import ForecastPage from './pages/ForecastPage';
+import axios from 'axios';
+import 'leaflet/dist/leaflet.css';  // Importa il CSS di Leaflet
 
-function App() {
+const cities = ['Rome,IT', 'Tokyo,JP', 'New York,US', 'Paris,FR', 'London,GB', 'Sydney,AU'];
+
+const App = ({ backgroundImage }) => {
+  const [weatherData, setWeatherData] = useState({});
+  const [forecastData, setForecastData] = useState({});
+
+  const apiKey = '43c3185f53a1409627d95ab543e3882a';
+
+  // Fetch weather data for all cities
+  const fetchWeatherData = async (city) => {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=it&units=metric`;
+
+    try {
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      console.error(`Errore nella chiamata API per ${city}:`, error);
+      return null;
+    }
+  };
+
+  // Fetch forecast data for all cities
+  const fetchForecastData = async (city) => {
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&appid=${apiKey}&lang=it&units=metric`;
+
+    try {
+      const response = await axios.get(forecastUrl);
+      return response.data.list.map(day => ({
+        date: new Date(day.dt * 1000).toLocaleDateString('it-IT'),
+        temp: day.temp.day,
+        description: day.weather[0].description,
+      }));
+    } catch (error) {
+      console.error(`Errore nella chiamata API per ${city}:`, error);
+      return [];
+    }
+  };
+
+  // Fetch data for all cities
+  const loadCityData = useCallback(async () => {
+    const weatherPromises = cities.map(city => fetchWeatherData(city));
+    const forecastPromises = cities.map(city => fetchForecastData(city));
+
+    const weatherResults = await Promise.all(weatherPromises);
+    const forecastResults = await Promise.all(forecastPromises);
+
+    const weatherMap = cities.reduce((acc, city, index) => {
+      acc[city] = weatherResults[index];
+      return acc;
+    }, {});
+
+    const forecastMap = cities.reduce((acc, city, index) => {
+      acc[city] = forecastResults[index];
+      return acc;
+    }, {});
+
+    setWeatherData(weatherMap);
+    setForecastData(forecastMap);
+  }, []);
+
+  useEffect(() => {
+    loadCityData();
+  }, [loadCityData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh' }}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                weatherData={weatherData}
+                forecastData={forecastData}
+                onSearch={(city) => {
+                  const formattedCity = `${city},IT`;
+                  fetchWeatherData(formattedCity).then(data => {
+                    setWeatherData(prev => ({ ...prev, [city]: data }));
+                  });
+                  fetchForecastData(formattedCity).then(data => {
+                    setForecastData(prev => ({ ...prev, [city]: data }));
+                  });
+                }}
+              />
+            }
+          />
+          <Route
+            path="/forecast"
+            element={<ForecastPage forecastData={forecastData} />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,67 @@
+.weather-card-container {
+  margin-bottom: 40px; /* Spazio extra sotto la scheda del meteo */
+}
+
+.weather-card {
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Riduci il padding per ridurre l'altezza complessiva */
+  border-radius: 20px; /* Raggio di arrotondamento di 20px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Ombra leggermente più scura */
+  height: 150px; /* Imposta un'altezza fissa per la scheda */
+  overflow: hidden; /* Nasconde l'overflow del contenuto se necessario */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    1
+  ) !important; /* Colore di sfondo bianco con 70% di opacità */
+  backdrop-filter: blur(
+    10px
+  ) !important; /* Sfocatura del background della scheda */
+  -webkit-backdrop-filter: blur(
+    10px
+  ) !important; /* Fallback per WebKit con sfocatura forzata */
+}
+
+.weather-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%; /* Assicura che il contenuto si adatti all'altezza della scheda */
+}
+
+.weather-info {
+  flex: 1;
+  text-align: left;
+  overflow: hidden; /* Nasconde l'overflow del testo se necessario */
+}
+
+.weather-info .card-title {
+  font-size: 1.5rem; /* Aumenta la dimensione del testo della città */
+  margin: 0; /* Riduci lo spazio sopra il titolo */
+  margin-bottom: 10px; /* Spazio sotto il titolo */
+  margin-top: -5px; /* Sposta il titolo più in alto */
+}
+
+.weather-info .card-subtitle {
+  margin-bottom: 15px; /* Aggiungi spazio sotto l'orario */
+}
+
+.weather-info p {
+  margin: 2px 0; /* Riduci lo spazio tra le righe */
+}
+
+.weather-icon-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px; /* Riduci lo spazio tra l'icona e il testo */
+  margin-top: 5px; /* Riduci lo spazio sopra l'icona */
+  margin-bottom: 5px; /* Riduci lo spazio sotto l'icona */
+}
+
+.weather-icon-container svg {
+  width: 50px; /* Riduci la dimensione dell'icona se necessario */
+  height: auto;
+}
