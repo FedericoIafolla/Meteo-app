@@ -9,35 +9,35 @@ import nightyIcon from '../assets/nighty.json';
 const WeatherIcons = ({ icon, isNight }) => {
     const getIcon = () => {
         if (isNight) {
-            return nightyIcon; // Usa nighty.json se è notte
+            return nightyIcon;
         }
 
         switch (icon) {
-            case '01d': // Sole
-            case '02d': // Parzialmente nuvoloso di giorno
-            case '03d': // Nuvoloso di giorno
+            case '01d':
+            case '02d':
+            case '03d':
                 return sunnyIcon;
-            case '09d': // Pioggia leggera di giorno
-            case '10d': // Pioggia di giorno
+            case '09d':
+            case '10d':
                 return rainyIcon;
-            case '11d': // Temporale di giorno
+            case '11d':
                 return rainyIcon;
-            case '13d': // Neve di giorno
+            case '13d':
                 return snowyIcon;
-            case '01n': // Sole di notte
-            case '02n': // Parzialmente nuvoloso di notte
-            case '03n': // Nuvoloso di notte
-            case '04n': // Molto nuvoloso di notte
+            case '01n':
+            case '02n':
+            case '03n':
+            case '04n':
                 return nightyIcon;
-            case '09n': // Pioggia leggera di notte
-            case '10n': // Pioggia di notte
+            case '09n':
+            case '10n':
                 return rainyIcon;
-            case '11n': // Temporale di notte
+            case '11n':
                 return rainyIcon;
-            case '13n': // Neve di notte
+            case '13n':
                 return snowyIcon;
             default:
-                return cloudyIcon; // Default se non c'è una corrispondenza
+                return cloudyIcon;
         }
     };
 

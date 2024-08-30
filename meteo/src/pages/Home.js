@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-import { FaSearch } from 'react-icons/fa'; // Importa l'icona di ricerca
-import Weather from '../components/Weather';  // Assicurati che il percorso sia corretto
+import { FaSearch } from 'react-icons/fa';
+import Weather from '../components/Weather';
 
-// Mappa dei nomi delle città in italiano
 const cityNames = {
     Rome: "Roma",
     Tokyo: "Tokyo",
@@ -39,7 +38,7 @@ const Home = ({ weatherData, onSearch }) => {
                     style={{
                         borderRight: '1px solid #ddd',
                         padding: '20px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)' // Trasparente per vedere lo sfondo
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)'
                     }}
                 >
                     <h3 style={{ marginBottom: '20px' }}>Seleziona una città</h3>
@@ -91,7 +90,7 @@ const Home = ({ weatherData, onSearch }) => {
                     className="d-flex flex-column"
                     style={{
                         padding: '20px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)' // Trasparente per vedere lo sfondo
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)'
                     }}
                 >
                     {selectedCity ? (
@@ -103,7 +102,7 @@ const Home = ({ weatherData, onSearch }) => {
             </Row>
             <footer
                 style={{
-                    backgroundColor: '#212529', // Colore dello stesso header
+                    backgroundColor: '#212529',
                     color: 'white',
                     textAlign: 'center',
                     padding: '10px',

@@ -1,27 +1,18 @@
 .weather-card-container {
-  margin-bottom: 40px; /* Spazio extra sotto la scheda del meteo */
+  margin-bottom: 40px;
 }
 
 .weather-card {
   display: flex;
   align-items: center;
-  padding: 10px; /* Riduci il padding per ridurre l'altezza complessiva */
-  border-radius: 20px !important; /* Usa !important per forzare la regola */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Ombra leggermente più scura */
-  height: 150px; /* Imposta un'altezza fissa per la scheda */
-  overflow: hidden; /* Nasconde l'overflow del contenuto se necessario */
-  background-color: rgba(
-    209,
-    247,
-    247,
-    0.7
-  ) !important; /* Colore di sfondo bianco con 70% di opacità */
-  backdrop-filter: blur(
-    10px
-  ) !important; /* Sfocatura del background della scheda */
-  -webkit-backdrop-filter: blur(
-    10px
-  ) !important; /* Fallback per WebKit con sfocatura forzata */
+  padding: 10px;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  height: 150px;
+  overflow: hidden;
+  background-color: rgba(209, 247, 247, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
 .weather-content {
@@ -29,40 +20,40 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100%; /* Assicura che il contenuto si adatti all'altezza della scheda */
+  height: 100%;
 }
 
 .weather-info {
   flex: 1;
   text-align: left;
-  overflow: hidden; /* Nasconde l'overflow del testo se necessario */
+  overflow: hidden;
 }
 
 .weather-info .card-title {
-  font-size: 2rem; /* Aumenta la dimensione del testo della città */
-  margin: 0; /* Riduci lo spazio sopra il titolo */
-  margin-bottom: 10px; /* Spazio sotto il titolo */
-  margin-top: -5px; /* Sposta il titolo più in alto */
-  font-weight: bold; /* Aggiungi il grassetto per il titolo */
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  font-weight: bold;
 }
 
 .weather-info .card-subtitle {
-  margin-bottom: 15px; /* Aggiungi spazio sotto l'orario */
+  margin-bottom: 15px;
 }
 
 .weather-info p {
-  margin: 2px 0; /* Riduci lo spazio tra le righe */
+  margin: 2px 0;
 }
 
 .weather-icon-container {
   display: flex;
   align-items: center;
-  margin-left: 10px; /* Riduci lo spazio tra l'icona e il testo */
-  margin-top: 5px; /* Riduci lo spazio sopra l'icona */
-  margin-bottom: 5px; /* Riduci lo spazio sotto l'icona */
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .weather-icon-container svg {
-  width: 50px; /* Riduci la dimensione dell'icona se necessario */
+  width: 50px;
   height: auto;
 }

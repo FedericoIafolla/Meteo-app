@@ -1,6 +1,5 @@
-/* src/components/Map.css */
 .map-container {
-  width: 100%; /* Imposta la larghezza della mappa al 100% del contenitore */
-  height: calc(100% * 2); /* Altezza doppia rispetto alla larghezza */
-  border-radius: 8px; /* Opzionale: aggiunge angoli arrotondati */
+  width: 100%;
+  height: calc(100% * 2);
+  border-radius: 8px;
 }

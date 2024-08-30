@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-/* src/index.css */
 body {
   font-family: "Arial", sans-serif;
   background-color: #f0f2f5;
@@ -50,7 +49,6 @@ h2 {
   border-color: #004085;
 }
 
-/* src/index.css */
 .container {
   padding: 2rem;
 }
@@ -88,13 +86,12 @@ h2 {
   font-size: 1.2rem;
 }
 
-/* src/index.css o style.css */
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-y: hidden; /* Nasconde la barra di scorrimento orizzontale */
+  overflow-y: hidden;
 }
 
 html,
@@ -102,7 +99,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* Nasconde la barra di scorrimento */
-  background: url("./assets/25501.jpg") no-repeat center center fixed; /* Aggiungi l'immagine di sfondo */
-  background-size: cover; /* Assicura che l'immagine copra l'intera pagina */
+  overflow: hidden;
+  background: url("./assets/25501.jpg") no-repeat center center fixed;
+  background-size: cover;
 }

@@ -1,4 +1,3 @@
-// src/components/Forecast.js
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { WiDaySunny, WiRain, WiCloudy, WiSnow } from 'react-icons/wi';

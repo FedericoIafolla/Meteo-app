@@ -1,4 +1,4 @@
-// src/pages/ForecastPage.js
+
 import React from 'react';
 import Forecast from '../components/Forecast';
 
