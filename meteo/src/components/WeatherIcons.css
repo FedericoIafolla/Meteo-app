@@ -6,15 +6,15 @@
   display: flex;
   align-items: center;
   padding: 10px; /* Riduci il padding per ridurre l'altezza complessiva */
-  border-radius: 20px; /* Raggio di arrotondamento di 20px */
+  border-radius: 20px !important; /* Usa !important per forzare la regola */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Ombra leggermente più scura */
   height: 150px; /* Imposta un'altezza fissa per la scheda */
   overflow: hidden; /* Nasconde l'overflow del contenuto se necessario */
   background-color: rgba(
+    223,
     255,
     255,
-    255,
-    1
+    0.7
   ) !important; /* Colore di sfondo bianco con 70% di opacità */
   backdrop-filter: blur(
     10px

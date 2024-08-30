@@ -103,6 +103,6 @@ body {
   padding: 0;
   height: 100%;
   overflow: hidden; /* Nasconde la barra di scorrimento */
-  background: url("./assets/sfondo1.jpg") no-repeat center center fixed; /* Aggiungi l'immagine di sfondo */
+  background: url("./assets/25501.jpg") no-repeat center center fixed; /* Aggiungi l'immagine di sfondo */
   background-size: cover; /* Assicura che l'immagine copra l'intera pagina */
 }
